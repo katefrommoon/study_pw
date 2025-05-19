@@ -60,7 +60,7 @@ const register = async (page, randomUser) => {
     return username;
 };
 
-test.only('Пользователь может зарегистрироваться с логином и паролем', async ({ page }) => {
+test('Пользователь может зарегистрироваться с логином и паролем', async ({ page }) => {
     const randomUser = getRandomUser();
     const username = await register(page, randomUser);
     await page.screenshot({ path: 'screenshot1.png' });
