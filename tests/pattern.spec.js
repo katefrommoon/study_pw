@@ -5,7 +5,7 @@ import { test, expect } from "@playwright/test";
 import { UserBuilder } from "../src/helpers/builders/user.builder.js";
 import { App } from "../src/pages/app.page.js";
 
-test.only("Пользователь может зарегистрироваться с логином и паролем", async ({
+test("Пользователь может зарегистрироваться с логином и паролем", async ({
   page,
 }) => {
 
