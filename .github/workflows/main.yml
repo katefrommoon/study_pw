@@ -36,5 +36,5 @@ jobs:
           #или test-result
           name: allure-results #test-result
           #или test-result
-          path: allure-results
+          path: allure-results #test-result
           retention-days: 3
