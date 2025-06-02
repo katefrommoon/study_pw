@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - name: install npm package 
+      - name: install npm package
         run: npm i
       - name: install pw
         run: npx playwright --with-deps
