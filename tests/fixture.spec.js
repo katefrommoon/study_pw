@@ -17,7 +17,7 @@ import { test } from "../src/helpers/fixtures/index.js";
 
 import { UserBuilder } from "../src/helpers/builders/user.builder.js";
 
-test.only("Пользователь может зарегистрироваться с логином и паролем", async ({
+test("Пользователь может зарегистрироваться с логином и паролем", async ({
   regPageWithUser, //вместо page - webApp, regPageWithUser etc
 }) => {
   await page.screenshot({ path: "screenshot1.png" });
