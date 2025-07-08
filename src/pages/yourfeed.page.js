@@ -10,6 +10,8 @@ export class YourFeedPage {
     this.favoriteButton = page.locator("button:has(i.ion-heart)").first();
     this.favoriteCounter = this.favoriteButton.locator("span.counter");
     this.profileMenu = page.locator('.nav-link.dropdown-toggle');
+    this.tagButton = page.locator("button.tag-pill").first();
+    this.tag = page.locator("li.tag-pill").first();
   }
   async gotoNewArticle() {
     return test.step("Перейти к созданию статьи", async () => {
@@ -41,6 +43,11 @@ export class YourFeedPage {
   async clickMenu() {
     return test.step("Раскрыть меню", async () => {
       await this.profileMenu.click();
+    });
+  }
+  async clickTag() {
+    return test.step("Кликнуть на тег", async () => {
+      await this.tagButton.click();
     });
   }
 }

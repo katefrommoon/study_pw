@@ -147,3 +147,21 @@ test("Пользователь может залогиниться", async ({ pa
     randomUser.username
   );
 });
+
+test("Пользователь может отфильтровать статьи по тегам", async ({ page }) => {
+  let app = new App(page);
+
+  const randomUser = new UserBuilder()
+    .addEmail()
+    .addPassword(10)
+    .addUsername()
+    .generate();
+
+  await app.main.open();
+  await app.main.gotoSignup();
+  await app.register.signup(randomUser);
+  const tagName = await app.yourFeed.tagButton.textContent();
+  await app.yourFeed.clickTag();
+  console.log(tagName);
+  await expect(app.yourFeed.tag).toHaveText(tagName);
+});
